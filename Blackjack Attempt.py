@@ -110,6 +110,15 @@ playerHand = player()
 
 end = False
 
+if playerHand == 21:
+    print("Well done! You have gotten Blackjack and beaten the dealer!")
+elif dealerHand == 21:
+    print("Unlucky, the daealer has Blackjack and wins this round.")
+    print("Better luck next time.")
+else:
+    print("Hmm. This message should not have appeared.")
+    print("It seems that something went wrong.")
+
 #gameEnd(playerHand,dealerHand)
 
 while end == False:
@@ -136,7 +145,7 @@ while end == False:
                 #break
             #else:
                 #pass
-        elif answer == "stick" or answer == "Stick" or answer == "STICK" or answer == "s" or answer == "T":
+        elif answer == "stick" or answer == "Stick" or answer == "STICK" or answer == "s" or answer == "S":
             if dealerHand > 21:
                 print("Dealer went bust.")
                 print("Player wins.")
@@ -147,60 +156,60 @@ while end == False:
                 print(card1)
                 print("Dealer has",dealerHand)
                 end = gameEnd(playerHand,dealerHand)
-                if playerHand > 21:
-                    print("Looks like you went bust, bad luck.")
-                    print("The dealer wins his round.")
-                elif playerHand == 21 or dealerHand == 21:
-                    if playerHand == 21:
-                        print("Well done! You have gotten Blackjack and beaten the dealer!")
-                    elif dealerHand == 21:
-                        print("Unlucky, the daealer has Blackjack and wins this round.")
-                        print("Better luck next time.")
-                    elif playerHand > dealerHand:
-                        print("Well done! You have beaten the dealer.")
-                        end = True
-                        #break
-                    elif dealerHand > playerHand:
-                        print("Unfortunately the dealer has beaten you this time.")
-                        end = True
-                        #break
-                    elif playerHand == dealerHand:
-                        print("The game is a tie. Neither the dealer nor the player wins.")
-                        end = True
-                        #break
-                    else:
-                        print("Hmm. This message should not have appeared.")
-                        print("It seems that something went wrong.")
-        
-                #if end == True:
+            elif playerHand > 21:
+                print("Looks like you went bust, bad luck.")
+                print("The dealer wins his round.")
+            elif playerHand == 21 or dealerHand == 21:
+                if playerHand == 21:
+                    print("Well done! You have gotten Blackjack and beaten the dealer!")
+                elif dealerHand == 21:
+                    print("Unlucky, the daealer has Blackjack and wins this round.")
+                    print("Better luck next time.")
+                elif playerHand > dealerHand:
+                    print("Well done! You have beaten the dealer.")
+                    end = True
                     #break
-                #else:
-                    #pass
-            #blocked to make sure player/ dealer win at 21 or go bust etc.
+                elif dealerHand > playerHand:
+                    print("Unfortunately the dealer has beaten you this time.")
+                    end = True
+                    #break
+                elif playerHand == dealerHand:
+                    print("The game is a tie. Neither the dealer nor the player wins.")
+                    end = True
+                    #break
+                else:
+                    print("Hmm. This message should not have appeared.")
+                    print("It seems that something went wrong.")
+    
+            #if end == True:
+                #break
             #else:
-                #if playerHand > dealerHand:
-                    #print("Well done! You have beaten the dealer.")
-                    #end = True
-                    #break
-                #elif dealerHand > playerHand:
-                    #print("Unfortunately the dealer has beaten you this time.")
-                    #end = True
-                    #break
-                #elif playerHand == dealerHand:
-                    #print("The game is a tie. Neither the dealer nor the player wins.")
-                    #end = True
-                    #break
-                #else:
-                    #print("Hmm. This message should not have appeared.")
-                    #print("It seems that something went wrong.")
-        
+                #pass
+        #blocked to make sure player/ dealer win at 21 or go bust etc.
         #else:
-            #print("Player has",playerHand)
-            #print("Dealer has",dealerHand)
-        #else:
-            #print("This means you went bust.")
-            #print("You have lost.")
-            #end = True
+            #if playerHand > dealerHand:
+                #print("Well done! You have beaten the dealer.")
+                #end = True
+                #break
+            #elif dealerHand > playerHand:
+                #print("Unfortunately the dealer has beaten you this time.")
+                #end = True
+                #break
+            #elif playerHand == dealerHand:
+                #print("The game is a tie. Neither the dealer nor the player wins.")
+                #end = True
+                #break
+            #else:
+                #print("Hmm. This message should not have appeared.")
+                #print("It seems that something went wrong.")
+    
+    #else:
+        #print("Player has",playerHand)
+        #print("Dealer has",dealerHand)
+    #else:
+        #print("This means you went bust.")
+        #print("You have lost.")
+        #end = True
 print("Got to the end.")
 
 #card1 = card()
