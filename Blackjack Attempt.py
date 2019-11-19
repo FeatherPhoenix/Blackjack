@@ -112,12 +112,15 @@ end = False
 
 if playerHand == 21:
     print("Well done! You have gotten Blackjack and beaten the dealer!")
+    end = True
 elif dealerHand == 21:
     print("Unlucky, the daealer has Blackjack and wins this round.")
     print("Better luck next time.")
+    end = True
 else:
     print("Hmm. This message should not have appeared.")
     print("It seems that something went wrong.")
+    end = True
 
 #gameEnd(playerHand,dealerHand)
 
