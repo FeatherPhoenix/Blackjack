@@ -88,18 +88,15 @@ def player():
 def gameEnd(playerHand,dealerHand):
     if playerHand == 21 and dealerHand == 21:
         print("Impressive! Both the dealer and the player have reached Blackjack!")
-        end = "TRUE"
-        return end
+        return TRUE
     elif playerHand == 21:
         print("Well done! You have achieved Blackjack and beaten the dealer.")
-        end = "TRUE"
-        return end
+        return TRUE
     elif dealerHand == 21:
         print("Unfortunately the dealer has beaten you this time. They had Blackjack.")
-        end = "TRUE"
-        return end
+        return TRUE
     else:
-        pass
+        return FALSE
 
 
 #playersNumber = input("How many players are there? ")
@@ -111,11 +108,11 @@ def gameEnd(playerHand,dealerHand):
 dealerHand = dealer()
 playerHand = player()
 
-end = "FALSE"
+end = FALSE
 
 #gameEnd(playerHand,dealerHand)
 
-while end == "FALSE":
+while end == FALSE:
     #if playerHand < 21:
     #print("Player has",playerHand)
     if playerHand == 21 or dealerHand == 21:
@@ -135,7 +132,7 @@ while end == "FALSE":
             print("Player has",playerHand)
             end = gameEnd(playerHand,dealerHand)
             print("NK:",end)
-            #if end == "TRUE":
+            #if end == TRUE:
                 #break
             #else:
                 #pass
@@ -143,7 +140,7 @@ while end == "FALSE":
             if dealerHand > 21:
                 print("Dealer went bust.")
                 print("Player wins.")
-                end = "TRUE"
+                end = TRUE
             elif dealerHand < 16:
                 card1 = card()
                 dealerHand = dealerHand + card1
@@ -161,21 +158,21 @@ while end == "FALSE":
                         print("Better luck next time.")
                     elif playerHand > dealerHand:
                         print("Well done! You have beaten the dealer.")
-                        end = "TRUE"
+                        end = TRUE
                         #break
                     elif dealerHand > playerHand:
                         print("Unfortunately the dealer has beaten you this time.")
-                        end = "TRUE"
+                        end = TRUE
                         #break
                     elif playerHand == dealerHand:
                         print("The game is a tie. Neither the dealer nor the player wins.")
-                        end = "TRUE"
+                        end = TRUE
                         #break
                     else:
                         print("Hmm. This message should not have appeared.")
                         print("It seems that something went wrong.")
         
-                #if end == "TRUE":
+                #if end == TRUE:
                     #break
                 #else:
                     #pass
@@ -183,15 +180,15 @@ while end == "FALSE":
             #else:
                 #if playerHand > dealerHand:
                     #print("Well done! You have beaten the dealer.")
-                    #end = "TRUE"
+                    #end = TRUE
                     #break
                 #elif dealerHand > playerHand:
                     #print("Unfortunately the dealer has beaten you this time.")
-                    #end = "TRUE"
+                    #end = TRUE
                     #break
                 #elif playerHand == dealerHand:
                     #print("The game is a tie. Neither the dealer nor the player wins.")
-                    #end = "TRUE"
+                    #end = TRUE
                     #break
                 #else:
                     #print("Hmm. This message should not have appeared.")
@@ -203,7 +200,7 @@ while end == "FALSE":
         #else:
             #print("This means you went bust.")
             #print("You have lost.")
-            #end = "TRUE"
+            #end = TRUE
 print("Got to the end.")
 
 #card1 = card()
